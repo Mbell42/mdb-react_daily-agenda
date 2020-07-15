@@ -1,9 +1,9 @@
 //DEPENDENCIES
 //  REACT
-import React from 'react';
+import React, {Component } from 'react';
 import ReactDOM from 'react-dom';
 //  CSS - font-awesome, bootstrap, mdbreact
-// import 'fontawesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 //  MDB Components
@@ -13,6 +13,8 @@ import './index.css';
 //  APP
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+
 
 //RENDER
 ReactDOM.render( <App /> , document.getElementById('root'));
