@@ -1,4 +1,8 @@
-.App{
+div[class^="col"],
+div[class*=" col"] {
+    border: 1px dotted black;
+}
+/* .App{
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -40,4 +44,4 @@
 .example-components-list li > a .fa {
 	color:rgba(0,0,0,.35);
 	float:right;
-}
+} */

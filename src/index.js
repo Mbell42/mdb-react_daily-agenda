@@ -6,17 +6,23 @@ import ReactDOM from 'react-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-//  MDB Components
-import { MDBBtn, MDBInput, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBIcon, MDBBadge, MDBContainer, MDBRow, MDBCol} from "mdbreact";
-// CSS - main
 import './index.css';
-//  APP
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+//  MDB Components
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
+class App extends Component {
+    state = {};
+    render() {
+    return  <React.Fragment>
+                <MDBContainer>
+                    <MDBRow>
+                        <MDBCol lg="6">Left Column</MDBCol>
+                        <MDBCol lg="6">Right Column</MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+            </React.Fragment>;
+    }
+}
+ReactDOM.render(<App />, document.getElementById("root"));
 
-
-//RENDER
-ReactDOM.render( <App /> , document.getElementById('root'));
-
-registerServiceWorker();
+// registerServiceWorker();
