@@ -15,6 +15,6 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 //RENDER
-ReactDOM.render( <h1>Hello World</h1> , document.getElementById('dynamic'));
+ReactDOM.render( <App /> , document.getElementById('root'));
 
 registerServiceWorker();
