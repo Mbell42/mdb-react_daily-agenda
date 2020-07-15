@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //  CSS - font-awesome, bootstrap, mdbreact
-import 'font-awesome/css/font-awesome.min.css';
+// import 'fontawesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 //  MDB Components
