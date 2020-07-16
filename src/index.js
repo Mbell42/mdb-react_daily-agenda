@@ -11,15 +11,48 @@ import "./index.css";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 class App extends Component {
-    state = {};
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: [
+                { 
+                    id: 1,
+                    time: "10:00",
+                    title: "Breakfast with Matthew",
+                    location: "Coffe Shop",
+                    description: "Good start to any day."
+                },
+                { 
+                    id: 2,
+                    time: "11:30",
+                    title: "Daily SCRUM Meeting",
+                    location: "Office",
+                },
+                { 
+                    id: 3,
+                    time: "12:00",
+                    title: "Lunch Break", 
+                },
+            ]
+        }
+    }
+        
     render() {
         return  (
             <React.Fragment>
                     <MDBContainer>
                         <MDBRow>
                             <MDBCol md="9">
-                                <Event title="Meeting with George" time="10:00" />
-                                <Event title="Lunch Meeting" time="12:00" />
+                            {this.state.events.map(event => (
+                                <Event
+                                key={event.id}
+                                id={event.id}
+                                time={event.time}
+                                title={event.title}
+                                location={event.location}
+                                description={event.description}                                                   
+                                />
+                            ))}
                             </MDBCol>
                             <MDBCol md="3"></MDBCol>
                         </MDBRow>
@@ -30,46 +63,18 @@ class App extends Component {
 };
 
 class Event extends Component {
-    // state = {
-    //     time: "10:00",
-    //     title: "My state name"
-    // };
-    constructor(props) {
-        super(props);
-        this.state = {
-            time: this.props.time,
-            title: this.props.title
-        };
-    }
     render() {
-        return (
-            <React.Fragment>
-                <h3>
-                    {this.state.time} - {this.state.title}
-                    <button
-                        onClick={() => {
-                            this.setState({title: "My NEW state title"})
-                            console.log(this.state.title);
-                        }}
-                    >
-                        Change State Title
-                    </button>
-                </h3>
-                {/* <h3>
-                    {this.state.time} - {this.state.title}
-                    <button
-                        onClick={() => {
-                            this.setState({title: "My NEW variable title"});
-                            console.log(this.varTitle);
-                        }}
-                    >
-                        Change Variable title
-                    </button>
-                </h3> */}
-            </React.Fragment>
-        );
+      return (
+        <React.Fragment>
+          <h3>
+            {this.props.time} - {this.props.title}
+          </h3>
+          <h5>Location: {this.props.location}</h5>
+          <p>Desc: {this.props.description}</p>
+        </React.Fragment>
+      );
     }
-};
+  }
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
